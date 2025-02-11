@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт о Космосе</title>
+    <style>
+        /* Общие стили */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #111;
+            color: #eee;
+        }
+
+        a {
+            color: #add8e6; /* Светло-синий */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #222;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #add8e6;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+        }
+
+        /* Стили для навигации (Flexbox) */
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav li a {
+            display: block;
+            padding: 10px;
+        }
+
+        /* Стили для главной сетки (Grid) */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 3fr; /* Боковая панель и основная часть */
+            grid-template-rows: auto 1fr auto; /* Шапка, контент, подвал */
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+            min-height: 100vh; /* Чтобы подвал всегда был внизу */
+        }
+
+        header {
+            grid-area: header;
+            background-color: #444;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #666;
+        }
+
+        aside {
+            grid-area: sidebar;
+            padding: 20px;
+            border-right: 1px solid #444;
+        }
+
+        main {
+            grid-area: main;
+            padding: 20px;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+            border-top: 1px solid #666;
+        }
+
+        /* Дополнительные стили для контента (Flexbox) */
+        .featured-articles {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .featured-articles article {
+            width: 300px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #333;
+            border-radius: 8px;
+        }
+
+        .featured-articles article h3 {
+            color: #add8e6;
+            margin-top: 0;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto 1fr auto;
+                grid-template-areas:
+                    "header"
+                    "sidebar"
+                    "main"
+                    "footer";
+            }
+
+            aside {
+                border-right: none;
+                border-bottom: 1px solid #444;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Сайт о Космосе</h1>
+            <p>Исследуйте бескрайние просторы Вселенной</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#about">О Космосе</a></li>
+                <li><a href="#planets">Планеты</a></li>
+                <li><a href="#galaxies">Галактики</a></li>
+                <li><a href="#featured">Популярное</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <aside>
+            <h2>Содержание</h2>
+            <ul>
+                <li><a href="#about">О Космосе</a></li>
+                <li><a href="#planets">Планеты</a></li>
+                <li><a href="#galaxies">Галактики</a></li>
+                <li><a href="#featured">Популярное</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <section id="about">
+                <h2>О Космосе</h2>
+                <p>Космос — это бескрайнее пространство, содержащее всё сущее: звёзды, планеты, галактики, черные дыры, и многое другое.  Его изучение позволяет нам лучше понять мир, в котором мы живем, и наше место в нем.</p>
+            </section>
+
+            <section id="planets">
+                <h2>Планеты</h2>
+                <p>Наша Солнечная система состоит из восьми планет, каждая из которых уникальна по своему составу и характеристикам. От жаркого Меркурия до ледяного Нептуна - каждая планета представляет собой удивительный мир для исследования.</p>
+            </section>
+
+            <section id="galaxies">
+                <h2>Галактики</h2>
+                <p>Галактики — это огромные скопления звёзд, газа и пыли, связанные гравитацией. Наша галактика, Млечный Путь, содержит сотни миллиардов звёзд.  Существуют галактики различных форм и размеров, от спиральных до эллиптических.</p>
+            </section>
+
+            <section id="featured">
+                <h2>Популярное</h2>
+                <div class="featured-articles">
+                    <article>
+                        <h3>Новое открытие экзопланеты</h3>
+                        <p>Недавно ученые обнаружили экзопланету, потенциально пригодную для жизни, в созвездии...</p>
+                    </article>
+                    <article>
+                        <h3>Запуск космического телескопа</h3>
+                        <p>В следующем году планируется запуск нового космического телескопа, который позволит нам увидеть Вселенную в беспрецедентных деталях.</p>
+                    </article>
+                    <article>
+                        <h3>Миссия на Марс</h3>
+                        <p>Подготовка к пилотируемой миссии на Марс идёт полным ходом.  Учёные работают над технологиями, необходимыми для длительного пребывания человека на Красной планете.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>Контакты</h2>
+                <p>Свяжитесь с нами, чтобы узнать больше о космосе и задать интересующие вас вопросы.</p>
+                <p>Email: info@space.com</p>
+            </section>
+        </main>
+
+        <footer>
+         Сайт о Космосе
+        </footer>
+
+    </div>
+
+</body>
+</html>
